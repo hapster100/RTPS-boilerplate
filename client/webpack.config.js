@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: './src/index.tsx',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.pug']
   },
   output: {
     path: path.join(__dirname, '/dist'),
@@ -12,10 +12,23 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.pug$/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/react']
+          }
+        }, 'pug-as-jsx-loader'],
+      },
       { 
-        test: /\.tsx?$/, 
-        loader: 'awesome-typescript-loader'
-      }
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader'
+          }
+        ]
+      }, 
     ]
   },
   plugins: [
