@@ -1,3 +1,5 @@
-div 
-  div(@repeat='techs as tech')
-    h1 {tech}
+.app
+  h1.app-title Stack:
+  ul.app-list
+    li.app-list-item(@repeat='techs as tech')
+      Tech(tech='{tech}')

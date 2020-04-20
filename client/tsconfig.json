@@ -12,8 +12,6 @@
     "removeComments": true,
     "allowSyntheticDefaultImports": false,
     "jsx": "react",
-    "allowJs": true,
     "baseUrl": "./",
-    "outDir": ""
   }
 }

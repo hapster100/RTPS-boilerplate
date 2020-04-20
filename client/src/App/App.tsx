@@ -5,8 +5,15 @@ interface AppProps {
   techs: string[]
 }
 
+const Tech = ({tech}) => {
+  console.log(tech)
+  return (
+    <div>{tech}</div>
+  )
+}
+
 const App = ({ techs } : AppProps) => {
-  return AppTemplate({ techs })
+  return AppTemplate({ techs, Tech })
 }
 
 export default App
