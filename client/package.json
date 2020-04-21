@@ -1,7 +1,7 @@
 {
-  "name": "mathhelper-client",
+  "name": "rtps-boilerplate",
   "version": "1.0.0",
-  "description": "Math tools",
+  "description": "React/TypeScript/Pug/Stylus",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
