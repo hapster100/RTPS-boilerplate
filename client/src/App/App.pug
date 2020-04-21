@@ -1,5 +1,5 @@
 .app
   h1.app-title Stack:
   ul.app-list
-    li.app-list-item(@repeat='techs as tech')
+    li.app-list-item(@repeat='techs as tech' onClick='{click(tech.url)}')
       Tech(tech='{tech}')

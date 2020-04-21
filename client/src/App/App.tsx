@@ -1,19 +1,28 @@
 import * as React from 'react'
 import AppTemplate from './App.pug'
+import './App.styl'
 
-interface AppProps {
-  techs: string[]
+interface StackItem {
+  name : string
+  url : string
 }
 
-const Tech = ({tech}) => {
-  console.log(tech)
+interface AppProps {
+  techs: StackItem[]
+}
+
+const Tech = ({ tech }) => {
   return (
-    <div>{tech}</div>
+    <div>{tech.name}</div>
   )
 }
 
 const App = ({ techs } : AppProps) => {
-  return AppTemplate({ techs, Tech })
+  const click = (url : string) => (e : Event) => {
+    window.open(url, '_blank')
+  }
+  console.log(techs)
+  return AppTemplate({ techs, Tech, click })
 }
 
 export default App

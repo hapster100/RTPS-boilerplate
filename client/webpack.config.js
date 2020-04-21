@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: './src/index.tsx',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.pug']
+    extensions: ['.ts', '.tsx', '.js', '.pug', 'styl']
   },
   output: {
     path: path.join(__dirname, '/dist'),
@@ -28,7 +28,15 @@ module.exports = {
             loader: 'awesome-typescript-loader'
           }
         ]
-      }, 
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'stylus-loader'
+        ]
+      }
     ]
   },
   plugins: [
